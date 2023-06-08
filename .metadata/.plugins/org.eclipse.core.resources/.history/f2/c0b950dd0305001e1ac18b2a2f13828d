@@ -1,0 +1,8 @@
+package com.rubypaper.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller //어노테이션 사용 ; @Controller & @Restcontroller
+public class BoardController{//extend로 class 상속받지 않음
+	
+}
