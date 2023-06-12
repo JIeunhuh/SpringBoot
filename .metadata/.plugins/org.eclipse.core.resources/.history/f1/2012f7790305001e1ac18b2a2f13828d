@@ -1,7 +1,0 @@
-package com.rubypaper.controller;
-
-import javax.servlet.http.HttpServlet;
-
-public class BoardController extends HttpServlet{
-	
-}
