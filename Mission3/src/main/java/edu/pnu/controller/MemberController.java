@@ -46,7 +46,7 @@ public class MemberController {
 	}
 	
 	@DeleteMapping("/member/{id}")
-	public int deleteMember(Integer id) {
+	public int deleteMember(@PathVariable Integer id) {
 		return memberService.deleteMember(id);
 	}
 }

@@ -11,12 +11,15 @@ public class MemberDAO1 implements MemberInterface {
 
 	private List<MemberVO> list;
 
+	public MemberDAO1() {
+		list = new ArrayList<>();
+		for (int i=1; i<=5; i++) {
+			list.add(MemberVO.builder().id(i).name("name"+i).pass("pass"+i).regidate(new Date()).build());
+		}
+	}
 	@Override
 	public List<MemberVO> getMembers() {
-		list = new ArrayList<>();
-		for (MemberVO m : list) {
-			list.add(m);
-		}
+		
 		return list;
 	}
 
@@ -30,9 +33,10 @@ public class MemberDAO1 implements MemberInterface {
 
 	@Override
 	public MemberVO addMember(MemberVO m) {
-		m.setId(list.size() + 1);
-		m.setName("name" + 1);
-		m.setPass("pass" + 1);
+		int id = list.size()+1;
+		m.setId(id);
+		m.setName(m.getName());
+		m.setPass(m.getPass());
 		m.setRegidate(new Date());
 		list.add(m);
 		return m;
@@ -43,7 +47,7 @@ public class MemberDAO1 implements MemberInterface {
 		for (MemberVO member : list) {
 			if (m.getId() == member.getId())
 				member.setName(m.getName());
-			member.setPass(m.getPass());
+				member.setPass(m.getPass());
 			return m;
 		}
 		return null;

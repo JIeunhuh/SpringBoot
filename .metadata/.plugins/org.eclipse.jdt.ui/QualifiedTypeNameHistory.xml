@@ -50,7 +50,6 @@
     <fullyQualifiedTypeName name="edu.pnu.controller.MemberController"/>
     <fullyQualifiedTypeName name="edu.pnu.service.MemberService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="edu.pnu.dao.MemberInterface"/>
     <fullyQualifiedTypeName name="edu.pnu.dao.MemberDAO1"/>
@@ -58,6 +57,7 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
-    <fullyQualifiedTypeName name="edu.pnu.domain.MemberVO"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="edu.pnu.domain.MemberVO"/>
 </qualifiedTypeNameHistroy>
