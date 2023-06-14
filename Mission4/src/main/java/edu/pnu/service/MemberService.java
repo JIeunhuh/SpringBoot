@@ -3,20 +3,21 @@ package edu.pnu.service;
 import java.util.List;
 import java.util.Map;
 
-import edu.pnu.dao.LogDAO;
+import edu.pnu.dao.LogH2DAOimpl;
 import edu.pnu.dao.MemberDAO02;
+import edu.pnu.dao.MemberDAO1;
 import edu.pnu.dao.MemberInterface;
 import edu.pnu.domain.MemberVO;
 
 public class MemberService {
 
 	private MemberInterface memberDao;
-	private LogDAO logDao;
+	private LogH2DAOimpl logDao;
 
 	public MemberService() {
-		// memberDao = new MemberDAO1();
-		memberDao = new MemberDAO02();
-		logDao = new LogDAO();
+		 memberDao = new MemberDAO1();
+		//memberDao = new MemberDAO02();
+		logDao = new LogH2DAOimpl();
 	}
 
 	public MemberVO getMember(Integer id) {
