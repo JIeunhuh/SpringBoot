@@ -11,7 +11,7 @@ import edu.pnu.dao.MemberDAOList;
 import edu.pnu.dao.MemberInterface;
 import edu.pnu.domain.MemberVO;
 
-@Service
+//@Service
 public class MemberService {
 
 	@Autowired

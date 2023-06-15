@@ -1,5 +1,6 @@
 package edu.pnu.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Map;
 
@@ -30,9 +31,9 @@ public class LogH2DAOimpl implements LogInterface {
 //	}
 
 	public Object addLog(Map<String,Object> map) { //map을 가져옴
-		try {
+		try (Connection con = datasource.getConnection()) {
 			
-			PreparedStatement ps = datasource.getConnection().prepareStatement("insert into DBLOG(method,sqlstring,success) values(?,?,?)");
+			PreparedStatement ps = con.prepareStatement("insert into DBLOG(method,sqlstring,success) values(?,?,?)");
 			ps.setObject(1, map.get("method"));
 			ps.setObject(2, map.get("sqlstring"));
 			ps.setObject(3, map.get("success"));

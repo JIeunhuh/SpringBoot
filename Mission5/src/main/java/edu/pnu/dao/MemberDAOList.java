@@ -6,29 +6,40 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import edu.pnu.domain.MemberVO;
 
 //list로 구현
-
+//@Repository
 public class MemberDAOList implements MemberInterface {
 
 	private List<MemberVO> list;
 	Map<String, Object> map;
-
+	
+	
 	public MemberDAOList() {
 		map = new HashMap<String, Object>();
 		list = new ArrayList<>();
 		for (int i = 1; i <= 5; i++) {
-			list.add(MemberVO.builder().id(i).name("name" + i).pass("pass" + i).regidate(new Date()).build());
+			list.add(MemberVO.builder()
+					.id(i)
+					.name("name" + i)
+					.pass("pass" + i)
+					.regidate(new Date())
+					.build());
 			map.put("result", list);
 		}
 	}
+	
 
 	@Override
 	public Map<String, Object> getMembers() {
-
 		map.put("method", "get");
 		map.put("sqlstring", "");
 		map.put("result", list);
