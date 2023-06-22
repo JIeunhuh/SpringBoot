@@ -75,11 +75,13 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="Chapter041"/>
 			<item value="Chapter04"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Chapter041"/>
 			<item value="Chapter04"/>
 		</list>
 		<list key="version">
