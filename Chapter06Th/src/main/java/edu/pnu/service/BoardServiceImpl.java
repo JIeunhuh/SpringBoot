@@ -3,6 +3,9 @@ package edu.pnu.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import edu.pnu.domain.Board;
@@ -12,9 +15,20 @@ import edu.pnu.persistence.BoardRepository;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardRepository boardRepo;
+	
+	
+	// paging 기능 service에서 구현함 !! 
+	@Override
+	public List<Board> getBoardList(int pageNum , int size){//게시판 목록
+		Pageable paging = PageRequest.of(pageNum, size);
+		Page<Board> page = boardRepo.findAll(paging);
+		
+		return page.getContent();
+	}
 
 	@Override
 	public List<Board> getBoardList(){//게시판 목록
+
 		return boardRepo.findAll();
 	}
 	

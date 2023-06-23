@@ -16,4 +16,6 @@ public interface BoardService {
 
 	void deleteBoard(Board board);
 
+	List<Board> getBoardList(int pageNum, int size);
+
 }
